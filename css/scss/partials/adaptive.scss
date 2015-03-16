@@ -1,0 +1,48 @@
+//adaptive
+body {
+  min-width: 300px;
+}
+
+$map: (k1: 320, k2: 480, k3: 768, k4: 980, k5: 1280, k6: 1440);
+$displays: inline, block, inline-block, table-cell;
+
+@mixin adaptiveRules($prev, $selector) {
+  @each $p in $displays {
+    .mq-#{$p}#{$selector}.mq-w-#{$prev} {
+      display: #{$p};
+    }
+  }
+}
+
+@each $s in $map {
+  $i: index($map, $s);
+  $curr: map-get($map, k#{$i});
+
+  .mq-w-#{$curr} {
+    display: none;
+  }
+
+  @if $i > 1 {
+    $prev: map-get($map, k#{$i - 1});
+
+    @media screen and (max-width: #{$curr - 1}px) and (min-width: #{$prev}px) {
+      @include adaptiveRules($prev, '');
+    }
+    @media screen and (min-width: #{$prev}px) {
+      @include adaptiveRules($prev, '.mq-max');
+    }
+    @media screen and (max-width: #{$prev - 1}px) {
+      @include adaptiveRules($prev, '.mq-min');
+    }
+
+    //container
+    @media screen and (max-width: #{$curr - 1}px) and (min-width: #{$prev}px) {
+      .container {
+        max-width: #{$prev - $cp};
+      }
+    }
+    ///container
+  }
+}
+
+//adaptive

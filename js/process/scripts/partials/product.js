@@ -1,0 +1,3 @@
+Product = {
+    Photo: 1
+}

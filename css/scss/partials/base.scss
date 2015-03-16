@@ -1,0 +1,87 @@
+//base settings
+body, input, select, button, textarea, .text-el {
+  font-size: $fs;
+}
+
+html, body {
+  height: 100%;
+}
+
+body, input, select, button, textarea {
+  font-family: Tahoma, Geneva, Kalimati, sans-serif;
+  line-height: 1.5;
+}
+
+input[type="text"], input[type="password"], select, textarea {
+  width: 100%;
+  max-width: 100%;
+  padding: 0 5px;
+  @include box-sizing(border-box);
+}
+
+input[type="text"], input[type="password"], select, textarea {
+  border: 1px solid;
+  background-color: #fff;
+}
+
+input[type="text"], input[type="password"], select {
+  height: 35px;
+}
+
+textarea {
+  display: block;
+  height: 64px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+///base settings
+
+//scaffolding
+body {
+  min-width: 960px;
+  background-color: $bg;
+}
+
+.container {
+  max-width: $cw;
+  padding: 0 $cp/2;
+}
+
+[class*="left-"], [class*="right-"] {
+  position: relative;
+}
+
+[class*="right-"] {
+  width: 74.5%;
+  float: right;
+  z-index: 0;
+}
+
+[class*="left-"] {
+  width: 23.5%;
+  float: left;
+  z-index: 1;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
+  display: block;
+}
+
+.main-body {
+  min-height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+article, .container {
+  margin: 0 auto;
+  clear: both;
+}
+
+.main-body > .content {
+  position: relative;
+  z-index: 1;
+}
+
+///scaffolding

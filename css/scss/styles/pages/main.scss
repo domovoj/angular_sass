@@ -1,0 +1,14 @@
+@import "../../partials/app";
+
+@import "compass/reset";
+@import "../../partials/base";
+@import "../../partials/helper";
+@import "../../partials/methods";
+@import "../../partials/components";
+@import "../../partials/adaptive";
+
+//..begin
+div{
+
+//    @include adjust-font-size-to(24px);
+}
