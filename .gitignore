@@ -2,8 +2,6 @@
 .sass-cache
 bower_components
 node_modules
-css/process
 css/build
 css/process
-css/build
 js/build

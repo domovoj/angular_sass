@@ -71,11 +71,15 @@
 }
 
 .f_l {
-  float: left !important;
+  @include float-left;
 }
 
 .f_r {
-  float: right !important;
+  @include float-right;
+}
+
+.f_n {
+  @include reset-float;
 }
 
 .c_b {

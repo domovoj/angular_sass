@@ -74,24 +74,25 @@
 <body>
 <h2>Todo</h2>
 
-<div ng-controller="TodoController">
-    <span>{{remaining()}} of {{todos.length}} remaining</span>
-    [ <a href="" ng-click="archive()">archive</a> ]
-    <ul class="unstyled">
-        <li ng-repeat="todo in todos">
-            <input type="checkbox" ng-model="todo.done">
-            <span class="done-{{todo.done}}">{{todo.text}}</span>
-        </li>
-    </ul>
-    <form ng-submit="addTodo()">
-        <input type="text" ng-model="todoText" size="30"
-               placeholder="add new todo here">
-        <input class="btn-primary" type="submit" value="add">
-    </form>
+<div ng-view>
+
 </div>
 
-<script data-main="js/process/config.js" src="bower_components/requirejs-plugins/lib/require.js"></script>
-<!-- after set on production rename 'process' to 'build' -->
+<div ng-controller="FilterController as ctrl">
+    <div>
+        All entries:
+        <span ng-repeat="entry in ctrl.array">{{entry.name}} </span>
+    </div>
+    <div>
+        Entries that contain an "a":
+        <span ng-repeat="entry in ctrl.filteredArray">{{entry.name}} </span>
+    </div>
+</div>
 
+<!-- after set on production rename 'process' to 'build' -->
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="js/angular/app.js"></script>
+<script src="js/angular/controllers/main.js"></script>
 </body>
 </html>

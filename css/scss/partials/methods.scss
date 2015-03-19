@@ -1,10 +1,5 @@
-.clearfix:after, .nav:after, .container:after, .frame-label:after {
-  content: ".";
-  display: block;
-  clear: both;
-  height: 0;
-  font-size: 0;
-  visibility: hidden;
+.clearfix, .nav, .container, .frame-label {
+  @include legacy-pie-clearfix;
 }
 
 .helper {

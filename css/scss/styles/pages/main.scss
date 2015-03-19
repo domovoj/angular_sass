@@ -9,6 +9,9 @@
 
 //..begin
 div{
-
 //    @include adjust-font-size-to(24px);
 }
+
+$icons-sprite-dimensions: true;
+@import "icons-main/*.png";
+@include all-icons-main-sprites;

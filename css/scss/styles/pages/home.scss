@@ -1,5 +1,4 @@
 @import "../../partials/app";
 
-.box {
-  font-size: $fs;
-}
+@import "icons-home/*.png";
+@include all-icons-home-sprites;

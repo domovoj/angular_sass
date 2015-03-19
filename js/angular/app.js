@@ -1,10 +1,21 @@
-define([
-    'require',
-    'angular',
-    'js/angular/controllers/main'
-], function (require, angular, controller) {
+var todoApp = angular.module('todoApp', [
+    'ngRoute'
+]);
 
+todoApp.config(function ($routeProvider) {
+    $routeProvider.
+        when('/', {
+            templateUrl: './views/view.html',
+            controller: 'todoController'
+        }).
+        otherwise({
+            redirectTo: '/'
+        });
 });
+
+
+
+
 
 //var requireMain2 = require.config({
 //    context: 'global',
